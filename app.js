@@ -8,10 +8,12 @@ fetch("https://api.imgflip.com/get_memes")
       galleryContent += `
         <div class="meme-item">
           <img src="${meme.url}" alt="${meme.name}" width="300px">
+          <p>${meme.name}</p>
         </div>
       `;
     });
 
     memeGallery.innerHTML = galleryContent;
-  })
-  .catch(error => console.error('Error:', error));
+  }
+
+).catch(error => console.error('Error:', error));
