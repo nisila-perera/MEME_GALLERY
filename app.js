@@ -1,4 +1,17 @@
+fetch("https://api.imgflip.com/get_memes")
+  .then(res => res.json())
+  .then(data => {
+    let memeGallery = document.getElementById("meme-gallery");
+    let galleryContent = ``;
 
-fetch("https://restcountries.com/v3.1/all")
-.then(res=>res.json())
-.then(data=>console.log(data))
+    data.data.memes.forEach(meme => {
+      galleryContent += `
+        <div class="meme-item">
+          <img src="${meme.url}" alt="${meme.name}" width="300px">
+        </div>
+      `;
+    });
+
+    memeGallery.innerHTML = galleryContent;
+  })
+  .catch(error => console.error('Error:', error));

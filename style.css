@@ -1,0 +1,17 @@
+body {
+    background-color: #f8f9fa;
+}
+.meme-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.meme-item {
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.meme-item img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
